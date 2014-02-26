@@ -34,13 +34,14 @@ def states_cb(msg) :
     diagnostic.header.stamp = msg.header.stamp
 
     # servo on
-    status = DiagnosticStatus(name = 'Operating Mode', level = DiagnosticStatus.OK, message = "Servo On")
+    status = DiagnosticStatus(name = 'Operating Mode', level = DiagnosticStatus.OK, message = "Servo Off")
     alarm_mesasge = ''
     for i in range(len(msg.name)) :
-        if ( status.level == DiagnosticStatus.OK and
-             ( msg.servo_alarm[i] > 0 or msg.servo_state[i] == False ) ) :
-            status.message = "Servo Off"
-            status.level   = DiagnosticStatus.WARN
+        if ( status.level != DiagnosticStatus.ERROR ) :
+            if ( msg.servo_state[i] == True ) :
+                status.message = "Servo On"
+            else :
+                status.level   = DiagnosticStatus.WARN
         if ( msg.servo_alarm[i] > 0 ):
             status.message = "Servo Error Alarm"
             status.level   = DiagnosticStatus.ERROR
@@ -58,10 +59,11 @@ def states_cb(msg) :
     diagnostic.status.append(status)
 
     # power on
-    status = DiagnosticStatus(name = 'Power Mode', level = DiagnosticStatus.OK, message = "Power On")
+    status = DiagnosticStatus(name = 'Power Mode', level = DiagnosticStatus.OK, message = "Power Off")
     for i in range(len(msg.name)) :
-        if ( msg.power_state[i] == False ) :
-            status.message = "Power Off"
+        if ( msg.power_state[i] == True ) :
+            status.message = "Power On"
+        else:
             status.level   = DiagnosticStatus.WARN
     diagnostic.status.append(status)
 

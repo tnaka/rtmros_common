@@ -27,7 +27,7 @@ This document explains how to use and how to contribute to rtm-ros-robotics soft
  - `mkdir -p ~/catkin_ws/src`
  - `cd ~/catkin_ws/src`
  - `catkin_init_workspace`
- - `wstool init .`
+ - `wstool init .` # if there isn't wstool, run `sudo apt-get install python-wstool`
  
  If compile all source code
  - `wstool merge https://raw.github.com/start-jsk/rtmros_common/master/.rosinstall -y`

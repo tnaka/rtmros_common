@@ -13,7 +13,7 @@ This document explains how to use and how to contribute to rtm-ros-robotics soft
  - `sudo apt-get install ros-$ROS_DISTRO-rtmros-common`
  
  If you did not installed ROS sysem, please follow [this instruction](http://wiki.ros.org/hydro/Installation/Ubuntu).
- - ``sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -a` main" > /etc/apt/sources.list.d/ros-latest.list'``
+ - ``sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'``
  - `wget http://packages.ros.org/ros.key -O - | sudo apt-key add -`
  - `sudo apt-get update`
  - `sudo apt-get update ros-hydro-base` # you may use ros-groovy-base if you want

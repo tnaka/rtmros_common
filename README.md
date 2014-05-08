@@ -16,7 +16,7 @@ This document explains how to use and how to contribute to rtm-ros-robotics soft
  - ``sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'``
  - `wget http://packages.ros.org/ros.key -O - | sudo apt-key add -`
  - `sudo apt-get update`
- - `sudo apt-get update ros-hydro-base` # you may use ros-groovy-base if you want
+ - `sudo apt-get install ros-hydro-base` # you may use ros-groovy-base if you want
  - `sudo rosdep init`
  - `rosdep update`
  - `source /opt/ros/hydro/setup.bash` # it is better to source ROS environment everytime terminal starts (`echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc`)
